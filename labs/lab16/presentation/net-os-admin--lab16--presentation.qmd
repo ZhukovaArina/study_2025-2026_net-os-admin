@@ -86,7 +86,7 @@ touch /etc/fail2ban/jail.d\
 /customisation.local
 ```
 
-**Настройки SSH:**
+### Настройки SSH
 
 ```ini
 [DEFAULT]
@@ -162,7 +162,7 @@ enabled = true
 :::::::::::::: {.columns align=center}
 ::: {.column width="60%"}
 
-**Проверка статуса и настройка параметров**
+## Проверка статуса и настройка параметров
 
 ```bash
 fail2ban-client status
@@ -225,7 +225,7 @@ ignoreip = 127.0.0.1/8 <client_ip>
 :::::::::::::: {.columns align=center}
 ::: {.column width="60%"}
 
-**Скрипт для автоматической установки**
+### Скрипт для автоматической установки
 
 ```bash
 #!/bin/bash
@@ -251,7 +251,7 @@ systemctl start fail2ban
 :::::::::::::: {.columns align=center}
 ::: {.column width="60%"}
 
-**Добавление в Vagrantfile**
+### Добавление в Vagrantfile
 
 ```ruby
 server.vm.provision "server protect",

@@ -1141,7 +1141,7 @@ margin-right: 0; }
 <div class="column" style="width:40%;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href></a><span class="fu">touch</span> /etc/fail2ban/jail.d<span class="dt">\</span></span>
 <span id="cb2-2"><a href></a>/customisation.local</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Настройки SSH:</strong></p>
+<h3 id="настройки-ssh">Настройки SSH</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb3-1"><a href></a><span class="kw">[DEFAULT]</span></span>
 <span id="cb3-2"><a href></a><span class="dt">bantime </span><span class="ot">=</span><span class="st"> </span><span class="dv">3600</span></span>
 <span id="cb3-3"><a href></a></span>
@@ -1214,12 +1214,15 @@ margin-right: 0; }
 </section>
 <section id="статус-и-настройки" class="slide level2">
 <h2>Статус и настройки</h2>
+</section>
 <div class="columns" data-align="center">
 <div class="column" style="width:60%;">
-<p><strong>Проверка статуса и настройка параметров</strong></p>
+<section id="проверка-статуса-и-настройка-параметров" class="slide level2">
+<h2>Проверка статуса и настройка параметров</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href></a><span class="ex">fail2ban-client</span> status</span>
 <span id="cb6-2"><a href></a><span class="ex">fail2ban-client</span> status sshd</span>
 <span id="cb6-3"><a href></a><span class="ex">fail2ban-client</span> set sshd maxretry 2</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1227,8 +1230,8 @@ margin-right: 0; }
 <figcaption>Статус fail2ban</figcaption>
 </figure>
 </div>
-</div></div>
-</section></section>
+</div>
+</div></section>
 <section>
 <section id="тестирование-блокировки" class="title-slide slide level1 center">
 <h1>Тестирование блокировки</h1>
@@ -1282,7 +1285,7 @@ margin-right: 0; }
 <h2>Создание скрипта provision</h2>
 <div class="columns" data-align="center">
 <div class="column" style="width:60%;">
-<p><strong>Скрипт для автоматической установки</strong></p>
+<h3 id="скрипт-для-автоматической-установки">Скрипт для автоматической установки</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href></a><span class="co">#!/bin/bash</span></span>
 <span id="cb8-2"><a href></a><span class="bu">echo</span> <span class="st">&quot;Install needed packages&quot;</span></span>
 <span id="cb8-3"><a href></a><span class="ex">dnf</span> <span class="at">-y</span> install fail2ban</span>
@@ -1304,7 +1307,7 @@ margin-right: 0; }
 <h2>Интеграция с Vagrant</h2>
 <div class="columns" data-align="center">
 <div class="column" style="width:60%;">
-<p><strong>Добавление в Vagrantfile</strong></p>
+<h3 id="добавление-в-vagrantfile">Добавление в Vagrantfile</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource ruby number-lines code-with-copy"><code class="sourceCode ruby"><span id="cb9-1"><a href></a>server<span class="at">.vm.provision</span> <span class="st">&quot;server protect&quot;</span>,</span>
 <span id="cb9-2"><a href></a>  <span class="wa">type:</span> <span class="st">&quot;shell&quot;</span>,</span>
 <span id="cb9-3"><a href></a>  <span class="wa">preserve_order:</span> <span class="dv">true</span>,</span>
